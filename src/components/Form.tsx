@@ -1,8 +1,8 @@
-import { useState, Dispatch } from "react";
+import { useState, Dispatch, useEffect } from "react";
 import { v4 as uuv4 } from 'uuid'
 
 import { categories } from "../data/data"
-import type { ActivityActions } from "../reducers/activity-reducer"
+import type { ActivityActions, ActivityState } from "../reducers/activity-reducer"
 import type { ActivityT } from "../types"
 
 // type FormProps = {
@@ -25,12 +25,22 @@ const initialState: ActivityT = {
     calories: 0
 }
 type FormProps = {
-    dispatch: Dispatch<ActivityActions>
+    dispatch: Dispatch<ActivityActions>,
+    state: ActivityState
 }
 
-export const Form = ({ dispatch }: FormProps) => {
+export const Form = ({ dispatch, state }: FormProps) => {
 
     const [activity, setActivity] = useState<ActivityT>(initialState)
+
+    useEffect(() => {
+
+        if (state.activeId) {
+            console.log("Ya hay algo en activeId");
+            const selectedActivity = state.activities.filter(stateActivity => stateActivity.id === state.activeId)[0]
+            setActivity(selectedActivity)
+        }
+    }, [state.activeId]);
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLInputElement>) => {
         setActivity({
@@ -57,10 +67,10 @@ export const Form = ({ dispatch }: FormProps) => {
 
     return (
 
-        <div className="min-h-screen bg-gray-600 py-6 flex flex-col justify-center sm:py-12 ">
+        <div className="min-h-screen bg-neutral-100 py-6 flex flex-col justify-center sm:py-12 w-1/2">
             <div className="relative py-3 w-5/6 sm:mx-auto ">
                 <div
-                    className="absolute inset-0 bg-gradient-to-r from-blue-300 to-green-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
+                    className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-fuchsia-900 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
                 </div>
                 <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
                     <div className="max-w-md mx-auto">

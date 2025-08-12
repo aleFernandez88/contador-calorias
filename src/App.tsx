@@ -14,9 +14,11 @@ function App() {
     <>
       <div className='flex '>
         <Form
-          dispatch={dispatch} />
+          dispatch={dispatch}
+          state={state} />
         <ActivityList
-          activities={state.activities} />
+          activities={state.activities}
+          dispatch={dispatch} />
       </div>
     </>
   )
