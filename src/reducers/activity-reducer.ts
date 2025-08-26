@@ -3,15 +3,21 @@ import type { ActivityT } from "../types"
 export type ActivityActions =
     { type: 'save-activity', payload: { newActivity: ActivityT } } |
     { type: 'set-activeId', payload: { id: ActivityT['id'] } } |
-    { type: 'delete-activity', payload: { id: ActivityT['id'] } }
+    { type: 'delete-activity', payload: { id: ActivityT['id'] } } |
+    { type: 'restart-app' }
 
 export type ActivityState = {
     activities: ActivityT[],
     activeId: ActivityT['id']
 }
 
+const localStorageActivities = (): ActivityT[] => {
+    const activities = localStorage.getItem('activities')
+    return activities ? JSON.parse(activities) : []
+}
+
 export const initialState: ActivityState = {
-    activities: [],
+    activities: localStorageActivities(),
     activeId: ''
 }
 
@@ -47,6 +53,12 @@ export const activityReducer = (
             return {
                 ...state,
                 activities: state.activities.filter(activity => activity.id !== action.payload.id)
+            }
+        }
+        case "restart-app": {
+            return {
+                activities: [],
+                activeId: ''
             }
         }
         default:

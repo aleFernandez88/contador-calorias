@@ -33,6 +33,7 @@ export const Form = ({ dispatch, state }: FormProps) => {
 
     const [activity, setActivity] = useState<ActivityT>(initialState)
 
+
     useEffect(() => {
 
         if (state.activeId) {
@@ -43,10 +44,14 @@ export const Form = ({ dispatch, state }: FormProps) => {
     }, [state.activeId]);
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLInputElement>) => {
+        const { id, value } = e.target;
+
         setActivity({
             ...activity,
-            [e.target.id]: e.target.value
-        })
+            [id]: id === "category" ? Number(value)
+                : id === "calories" ? Number(value)
+                    : value
+        });
     }
 
     const isValidActivity = () => {
@@ -67,7 +72,7 @@ export const Form = ({ dispatch, state }: FormProps) => {
 
     return (
 
-        <div className="min-h-screen bg-neutral-100 py-6 flex flex-col justify-center sm:py-12 w-1/2">
+        <div className="  py-6 flex flex-col justify-center  ">
             <div className="relative py-3 w-5/6 sm:mx-auto ">
                 <div
                     className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-fuchsia-900 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
@@ -140,7 +145,6 @@ export const Form = ({ dispatch, state }: FormProps) => {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
