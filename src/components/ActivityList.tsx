@@ -21,8 +21,8 @@ export const ActivityList = ({ activities, dispatch }: ActivityListProps) => {
 
 
     return (
-        <div className='min-h-screen bg-neutral-100 py-6 flex flex-col justify-center sm:py-12 w-1/2'>
-            <div className='flex justify-around w-full items-center'>
+        <div className='min-h-screen bg-neutral-100 py-6 flex flex-col justify-center sm:py-12 sm:w-1/2'>
+            <div className='flex flex-col sm:flex-row justify-around w-full items-center'>
                 <h2 className='text-4xl font-bold text-neutral-600 text-center my-4'>Actividades y comidas</h2>
                 <button
                     className="bg-gray-800 text-white rounded-md px-2 py-1 h-fit disabled:opacity-10 cursor-pointer"
