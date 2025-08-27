@@ -38,7 +38,9 @@ Permite registrar actividades diarias y ver de forma inmediata cómo afectan el 
 
 ## 🎥 Demo en acción
 
-![Demo Calorie Counter](https://i.ibb.co/pj77bdCg/Contador-calorias-Hecho-con-Clipchamp.gif)
+![Demo Calorie Counter](./gifs/Contador%20calorias%20‐%20Hecho%20con%20Clipchamp.gif)
+
+
 
 ---
 
