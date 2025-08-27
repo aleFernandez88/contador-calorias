@@ -17,7 +17,7 @@ export const CaloriesTtracker = ({ activities }: CaloriesTrackerProps) => {
     return (
         <>
             <h2 className='mt-9 text-4xl font-bold text-center text-gray-800'> Resumen de calorías</h2>
-            <div className='flex flex-col items-center md:flex-row md:justify-between gap-5 mt-10'>
+            <div className='flex items-center md:justify-between gap-5 mt-10'>
                 <CaloriesDisplay
                     text={"Comida"}
                     calories={caloriesConsumed}

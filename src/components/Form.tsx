@@ -97,7 +97,7 @@ export const Form = ({ dispatch, state }: FormProps) => {
                                         {
                                             categories.map(categorie =>
                                                 <option
-                                                    key={categorie.id}
+                                                    key={categorie.name}
                                                     value={categorie.id}
 
                                                 >

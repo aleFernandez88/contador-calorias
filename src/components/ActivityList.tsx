@@ -11,17 +11,16 @@ type ActivityListProps = {
 
 export const ActivityList = ({ activities, dispatch }: ActivityListProps) => {
 
-    const activityName = useMemo(
+    const categoryName = useMemo(
         () =>
-            (category: ActivityT['category']) =>
-                categories.map(cat => cat.id === category ? cat.name : "")
+            (category: ActivityT['category']) => categories.map(cat => cat.id === category ? cat.name : "")
         , [activities]
     )
     const isEmptyActivities = useMemo(() => activities.length === 0, [activities])
 
 
     return (
-        <div className='min-h-screen bg-neutral-100 py-6 flex flex-col justify-center sm:py-12 sm:w-1/2'>
+        <div className='md:min-h-screen bg-neutral-100 py-6 flex flex-col justify-center sm:py-12 sm:w-1/2'>
             <div className='flex flex-col sm:flex-row justify-around w-full items-center'>
                 <h2 className='text-4xl font-bold text-neutral-600 text-center my-4'>Actividades y comidas</h2>
                 <button
@@ -38,7 +37,7 @@ export const ActivityList = ({ activities, dispatch }: ActivityListProps) => {
                         <div key={activity.id} className=' rounded-2xl px-5 pt-10 pb-5 bg-white mt-5 flex justify-between w-5/6 mx-auto'>
                             <div className='space-y-2 relative'>
                                 <p className={`absolute -top-8 -left-8 px-8 py-1 font-light text-white uppercase shadow-gray-600 shadow-md rounded-lg  ${activity.category === 1 ? 'bg-cyan-600' : 'bg-fuchsia-900'}`}>
-                                    {activityName(+activity.category)}
+                                    {categoryName(activity.category)}
                                 </p>
                                 <p className='text-2xl font-normal pt-1'>
                                     {activity.name}

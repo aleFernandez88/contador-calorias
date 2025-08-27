@@ -1,69 +1,97 @@
-# React + TypeScript + Vite
+# 🥗 Calorie Counter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=fff&style=flat-square)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=fff&style=flat-square)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=fff&style=flat-square)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-3-38B2AC?logo=tailwindcss&logoColor=fff&style=flat-square)
+![Netlify](https://img.shields.io/badge/Deploy-Netlify-00C7B7?logo=netlify&logoColor=fff&style=flat-square)
 
-Currently, two official plugins are available:
+Un contador de calorías simple y visual, desarrollado con **Vite + React + TypeScript** y estilizado con **TailwindCSS**.  
+Permite registrar actividades diarias y ver de forma inmediata cómo afectan el **balance calórico diario** (ya sea sumando o restando calorías).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 **Deploy en Netlify**: [Calorie Counter App](https://tiny-croissant-35fcfe.netlify.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Características
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 📋 **Lista de actividades** predefinidas (ejercicio, comidas, etc).
+- ➕➖ Cada actividad puede **sumar o restar calorías** al balance.
+- 📊 **Balance calórico diario** actualizado en tiempo real.
+- ⚡ Interfaz rápida y ligera gracias a **Vite**.
+- 🎨 Diseño responsive con **TailwindCSS**.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🖼️ Vista previa
+
+### 💻 Desktop
+
+![Vista Desktop](https://i.ibb.co/PzM9Nh1Z/Captura-de-pantalla-2025-08-26-205906.png)
+
+### 📱 Mobile
+
+![Vista Mobile]
+<img src="https://i.ibb.co/23cmLpR7/localhost-5173-i-Phone-12-Pro.png" width="250" alt="Vista Mobile">
+
+---
+
+## 🎥 Demo en acción
+
+![Demo Calorie Counter](https://i.ibb.co/pj77bdCg/Contador-calorias-Hecho-con-Clipchamp.gif)
+
+---
+
+## 🚀 Instalación y uso
+
+Si querés correr el proyecto de manera local:
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/tu-usuario/calorie-counter.git
+
+# Entrar a la carpeta
+cd calorie-counter
+
+# Instalar dependencias
+npm install
+
+# Levantar el servidor de desarrollo
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+El proyecto quedará disponible en http://localhost:5173
+.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🛠️ Tecnologías utilizadas
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+⚛️ React 18
+
+🟦 TypeScript
+
+⚡ Vite
+
+🎨 TailwindCSS
+
+☁️ Netlify
+(deploy)
+
+📌 Próximas mejoras
+
+✅ Agregar almacenamiento en localStorage para persistir datos.
+
+✅ Posibilidad de agregar actividades personalizadas.
+
+✅ Historial de balances diarios.
+
+✅ Exportar/visualizar en gráficos.
+
+👨‍💻 Autor
+
+Hecho con 💙 por Alejandro Fernández
+🔗 LinkedIn
+· Portfolio
+
+⭐ Si te gustó este proyecto, no dudes en dejarle una estrella en el repo :)
+
+---
