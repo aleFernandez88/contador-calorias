@@ -31,7 +31,6 @@ Permite registrar actividades diarias y ver de forma inmediata cómo afectan el 
 
 ### 📱 Mobile
 
-![Vista Mobile]
 <img src="https://i.ibb.co/23cmLpR7/localhost-5173-i-Phone-12-Pro.png" width="250" alt="Vista Mobile">
 
 ---
